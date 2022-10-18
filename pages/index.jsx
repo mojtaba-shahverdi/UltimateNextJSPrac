@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import styled from '@emotion/styled'
-import { css, cx } from '@emotion/css'
+import { css } from '@emotion/css'
 
 const Button = styled.button`
   padding: 32px;
