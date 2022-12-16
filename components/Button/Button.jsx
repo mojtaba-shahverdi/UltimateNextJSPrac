@@ -1,17 +1,21 @@
 import React from 'react'
-import styled from '@emotion/styled'
 import { useTheme } from '@emotion/react'
+import { css } from '@emotion/css'
+import PropTypes from 'prop-types'
 
-// eslint-disable-next-line react/prop-types
-const Button = ({ type = 'button', children, widthAll, loading }) => {
+const Button = ({
+  children,
+  widthAll,
+  loading,
+  disabled,
+  type = 'button',
+  buttonType = 'primary',
+  onClick = () => {},
+}) => {
   const theme = useTheme()
-
-  const Layout = styled.div`
-    width: 100%;
-  `
-  const ButtonEl = styled.button`
+  const B = css`
     width: ${widthAll ? '100%' : 'auto'};
-    background: ${theme.colors.primary};
+    background: ${theme.colors[buttonType]};
     color: #fff;
     font-size: ${theme.typography.paragraph.fontSize};
     text-decoration: none;
@@ -31,15 +35,38 @@ const Button = ({ type = 'button', children, widthAll, loading }) => {
     &:active {
       box-shadow: ${theme.boxShadow.light} inset;
     }
+    &:disabled {
+      background-color: ${theme.colors.backgroundColorSecondary};
+      cursor: no-drop;
+    }
   `
   return (
-    <Layout>
-      <ButtonEl>
+    <div
+      className={css`
+        width: 100%;
+      `}
+    >
+      <button
+        className={B}
+        disabled={disabled || loading}
+        type={type}
+        onClick={onClick}
+      >
         {loading && <img src="/loading.gif" width="6%" />}
         {!loading && children}
-      </ButtonEl>
-    </Layout>
+      </button>
+    </div>
   )
+}
+
+Button.propTypes = {
+  children: PropTypes.any,
+  widthAll: PropTypes.any,
+  loading: PropTypes.any,
+  disabled: PropTypes.any,
+  type: PropTypes.any,
+  buttonType: PropTypes.any,
+  onClick: PropTypes.any,
 }
 
 export default Button

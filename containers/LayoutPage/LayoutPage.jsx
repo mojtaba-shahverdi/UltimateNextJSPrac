@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
 import { useTheme } from '@emotion/react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { H3, Hyperlink, Button, Paragraph, Small } from '../../components'
 // import { LOGOUT_ACTION } from '../../actions'
 import { css } from '@emotion/css'
 
 const LayoutPage = ({ children }) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const auth = useSelector((state) => state.auth)
   const theme = useTheme()
 
