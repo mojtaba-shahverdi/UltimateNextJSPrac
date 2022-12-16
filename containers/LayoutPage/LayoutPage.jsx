@@ -10,9 +10,7 @@ const LayoutPage = ({ children }) => {
   const dispatch = useDispatch()
   const auth = useSelector((state) => state.auth)
   const theme = useTheme()
-  // const handleLogOut = () => {
-  //   dispatch(LOGOUT_ACTION())
-  // }
+
   return (
     <div
       className={css`

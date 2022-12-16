@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Render Correctly 1`] = `
+[
+  <style
+    dangerouslySetInnerHTML={
+      {
+        "__html": ".css-ybrhvy{width:100%;}",
+      }
+    }
+    data-emotion="css ybrhvy"
+  />,
+  <div
+    className="css-ybrhvy"
+  >
+    <style
+      dangerouslySetInnerHTML={
+        {
+          "__html": ".css-1bn5aq7{width:auto;background:#00cec9;color:#fff;font-size:1;-webkit-text-decoration:none;text-decoration:none;padding:16px;border:2px;border-radius:2px;display:inline-block;position:relative;cursor:pointer;-webkit-transition:all 0.4s ease-in-out;transition:all 0.4s ease-in-out;}.css-1bn5aq7:hover{box-shadow:0 4px 16px rgba(0, 1, 31, 0.2);background:#00fffb;color:#000;font-weight:bold;}.css-1bn5aq7:active{box-shadow:0 4px 16px rgba(0, 1, 31, 0.2) inset;}",
+        }
+      }
+      data-emotion="css 1bn5aq7"
+    />
+    <button
+      className="css-1bn5aq7"
+    >
+      Sample Button
+    </button>
+  </div>,
+]
+`;

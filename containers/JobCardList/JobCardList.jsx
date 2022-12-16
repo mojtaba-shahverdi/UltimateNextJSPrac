@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
 import JobCard from '../JobCard/JobCard'
 import { Hyperlink } from '../../components'
@@ -24,7 +23,7 @@ const JobCardList = ({ jobs, loading }) => {
     <div>
       {loading && (
         <Layout>
-          <Image alt="loading" src="assets/img/loading.svg" />
+          <Image alt="loading" src="/loading.gif" />
         </Layout>
       )}
       {!loading &&
@@ -37,4 +36,5 @@ const JobCardList = ({ jobs, loading }) => {
     </div>
   )
 }
+
 export default JobCardList

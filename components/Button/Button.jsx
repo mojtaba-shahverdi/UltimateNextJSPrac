@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { useTheme } from '@emotion/react'
 
 // eslint-disable-next-line react/prop-types
-const Button = ({ type = 'button', children, widthAll }) => {
+const Button = ({ type = 'button', children, widthAll, loading }) => {
   const theme = useTheme()
 
   const Layout = styled.div`
@@ -34,7 +34,10 @@ const Button = ({ type = 'button', children, widthAll }) => {
   `
   return (
     <Layout>
-      <ButtonEl>{children}</ButtonEl>
+      <ButtonEl>
+        {loading && <img src="/loading.gif" width="6%" />}
+        {!loading && children}
+      </ButtonEl>
     </Layout>
   )
 }

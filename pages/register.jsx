@@ -12,19 +12,22 @@ import {
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 import { useRouter } from 'next/router'
+import { useDispatch, useSelector } from 'react-redux'
+import { REGISTER_ACTION } from '../actions'
 
 const Register = () => {
-  const router = useRouter()
+  const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
+  const auth = useSelector((state) => state.auth)
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     // handling API
     console.log('handleSubmit', formValue)
-
+    dispatch(REGISTER_ACTION())
     // if success
-    router.push('/')
+    // router.push('/')
   }
 
   const handleChange = (name, value) => {
@@ -65,7 +68,7 @@ const Register = () => {
             />
           </FormControl>
           <FormControl>
-            <Button widthAll type="submit">
+            <Button widthAll type="submit" loading={auth.loading}>
               Register
             </Button>
           </FormControl>

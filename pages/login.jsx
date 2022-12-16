@@ -11,24 +11,22 @@ import {
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
 import { css } from '@emotion/css'
-import { useDispatch } from 'react-redux'
-import actionTypes from '../config/actionTypes'
+import { useDispatch, useSelector } from 'react-redux'
+import { LOGIN_ACTION } from '../actions'
 
 const Login = () => {
   const dispatch = useDispatch()
   const [formValue, setFormValue] = useState({})
+  const auth = useSelector((state) => state.auth)
+  console.log('auth', auth)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
     // handling API
     console.log('handleSubmit', formValue)
 
-    dispatch({
-      type: actionTypes.LOGIN,
-      logged: true,
-      email: formValue.email,
-    })
+    dispatch(LOGIN_ACTION())
 
     // if success
   }
@@ -66,7 +64,7 @@ const Login = () => {
             />
           </FormControl>
           <FormControl>
-            <Button widthAll type="submit">
+            <Button widthAll type="submit" loading={auth.loading}>
               Submit
             </Button>
           </FormControl>
