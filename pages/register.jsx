@@ -11,7 +11,6 @@ import {
   Hyperlink,
 } from '../components'
 import FormControl from '../containers/FormControl/FormControl'
-import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { REGISTER_ACTION } from '../actions'
 

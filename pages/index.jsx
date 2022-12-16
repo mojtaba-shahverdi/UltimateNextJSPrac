@@ -6,6 +6,7 @@ import HomePageBanner from '../containers/HomePageBanner/HomePageBanner'
 import JobCardList from '../containers/JobCardList/JobCardList'
 import { H2 } from '../components'
 import { GET_LIST_JOB_ACTION } from '../actions'
+import PropTypes from 'prop-types'
 
 const Home = ({ jobs, loading }) => {
   return (
@@ -39,6 +40,11 @@ const Home = ({ jobs, loading }) => {
       </LayoutPage>
     </div>
   )
+}
+
+Home.propTypes = {
+  jobs: PropTypes.any,
+  loading: PropTypes.any,
 }
 
 Home.getInitialProps = async ({ reduxStore }) => {
